@@ -19,6 +19,8 @@ rdoc
 pkg
 doc
 .yardoc
+.rvmrc
+.idea
 
 ## PROJECT::SPECIFIC
 Gemfile.lock

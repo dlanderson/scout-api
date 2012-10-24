@@ -36,6 +36,9 @@ Each of the classes have Rails-like finder methods. For example:
   # all groups with name =~ 'Web'
   Scout::Group.all(:name => 'Web')
 
+  # all servers in a group (or groups) with group name =~ 'Web'
+  Scout::Server.all(:group_name => "Web")
+
 == Metrics
 
 Access your metric data stored in Scout. You can retrieve data for a specific metric,

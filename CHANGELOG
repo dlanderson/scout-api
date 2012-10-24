@@ -1,3 +1,7 @@
+== 1.1.0
+
+* fetch all the servers in a group (or groups, matched by group name)
+
 == 1.0.5
 
 * Hacks to allow for new Hashie versions. See https://github.com/intridea/hashie/issues/14

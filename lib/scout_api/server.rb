@@ -98,6 +98,8 @@ class Scout::Server < Hashie::Mash
       response = Scout::Account.get("/clients.xml?name=#{CGI.escape(name)}")
     elsif host=options[:host]
       response = Scout::Account.get("/clients.xml?host=#{CGI.escape(host)}")
+    elsif name=options[:group_name]
+      response = Scout::Account.get("/clients.xml?group_name=#{CGI.escape(name)}")
     elsif options.empty?
       response = Scout::Account.get("/clients.xml")
     else
