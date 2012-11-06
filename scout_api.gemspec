@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "scout_api"
-  s.version = "1.1.0"
+  s.version = "1.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jesse Newland", "Derek Haynes"]
-  s.date = "2012-10-24"
+  s.date = "2012-11-06"
   s.description = "A library for interacting with Scout (http://scoutapp.com), a hosted server monitoring service. Query for metric data, manage servers, and more."
   s.email = "support@scoutapp.com"
   s.extra_rdoc_files = [
@@ -55,7 +55,7 @@ Gem::Specification.new do |s|
   ]
   s.homepage = "https://scoutapp.com/info/api"
   s.require_paths = ["lib"]
-  s.rubygems_version = "1.8.24"
+  s.rubygems_version = "1.8.10"
   s.summary = "API wrapper for scoutapp.com"
 
   if s.respond_to? :specification_version then
