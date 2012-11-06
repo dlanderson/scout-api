@@ -4,14 +4,14 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = "scout_api"
-  s.version = "1.1.1"
+  s.name = %q{scout_api}
+  s.version = "1.1.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jesse Newland", "Derek Haynes"]
-  s.date = "2012-11-06"
-  s.description = "A library for interacting with Scout (http://scoutapp.com), a hosted server monitoring service. Query for metric data, manage servers, and more."
-  s.email = "support@scoutapp.com"
+  s.date = %q{2012-11-05}
+  s.description = %q{A library for interacting with Scout (http://scoutapp.com), a hosted server monitoring service. Query for metric data, manage servers, and more.}
+  s.email = %q{support@scoutapp.com}
   s.extra_rdoc_files = [
     "LICENSE",
     "README.rdoc"
@@ -53,10 +53,10 @@ Gem::Specification.new do |s|
     "test/server_test.rb",
     "test/test_helper.rb"
   ]
-  s.homepage = "https://scoutapp.com/info/api"
+  s.homepage = %q{https://scoutapp.com/info/api}
   s.require_paths = ["lib"]
-  s.rubygems_version = "1.8.10"
-  s.summary = "API wrapper for scoutapp.com"
+  s.rubygems_version = %q{1.4.2}
+  s.summary = %q{API wrapper for scoutapp.com}
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
