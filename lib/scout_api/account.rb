@@ -1,9 +1,8 @@
 class Scout::Account
   include HTTParty
-  base_uri 'https://scoutapp.com'
-  #base_uri 'http://localhost:3000'
+  #base_uri 'https://scoutapp.com'
+  base_uri 'http://localhost:3000'
   
-  format :xml
   mattr_inheritable :param
 
   def initialize(account_param, username, password)
