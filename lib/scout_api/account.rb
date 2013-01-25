@@ -42,7 +42,12 @@ class Scout::Account
     end
 
   end
-  
+
+  def self.all
+    response=get("/accounts_for_user.json", :exclude_param=>true)
+    (response.first && response.first['account']) ? response.map{|h| Hashie::Mash.new(h['account'])} : []
+  end
+
   class << self
     alias_method :http_get, :get
   end
@@ -54,10 +59,11 @@ class Scout::Account
   # Scout::Error is raised. Otherwise, the response.
   # 
   # @return [HTTParty::Response]
-  def self.get(uri)
+  def self.get(uri, options={})
     raise Scout::Error, 
           "Authentication is required (scout = Scout::Account.new('youraccountname', 'your@awesome.com', 'sekret'))" if param.nil?
-    uri = "/#{param}" + uri + (uri.include?('?') ? '&' : '?') + "api_version=#{Scout::VERSION}"
+
+    uri = (options[:exclude_param] ? "" : "/#{param}") + uri + (uri.include?('?') ? '&' : '?') + "api_version=#{Scout::VERSION}"
     #puts "GET: #{uri}"
     response = http_get(uri)
     response.code.to_s =~ /^(4|5)/ ? raise( Scout::Error,response['error'] ? response['error']['message'] : response.message) : response
