@@ -18,7 +18,7 @@ Jeweler::Tasks.new do |gem|
 end
 Jeweler::GemcutterTasks.new
 
-require 'rake/rdoctask'
+require 'rdoc/task'
 Rake::RDocTask.new do |rdoc|
   version = Scout::VERSION
 
