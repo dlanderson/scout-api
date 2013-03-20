@@ -9,7 +9,7 @@ Install the gem if you haven't already:
 
   gem install scout_api
 
-Require the gem and authenticate to get your Scout on:
+Require the gem and authenticate to get your Scout on (assuming `https://scoutapp.com/youraccountname/` is your account URL):
 
   require 'scout_api'
   scout = Scout::Account.new('youraccountname', 'your@awesome.com', 'sekret')
