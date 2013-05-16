@@ -1,37 +1,10 @@
-# Groups represent a collection of servers. 
-# They can be created in the Scout UI to put similar servers together (ex: Web Servers, Database Servers).
+# Groups represent a collection of servers.
 class Scout::Group < Hashie::Mash
   # Retrieve metric information. See {Scout::Metric.average} for a list of options for the calculation
   # methods (average, minimum, maximum).
   # 
-  # Examples:
-  # 
-  #  # All metrics associated with this group.
-  #  Scout::Group.metrics
-  # 
-  #  # Metrics with name =~ 'Memory Used' across all servers in this group.
-  #  Scout::Group.metrics.all(:name => 'Memory Used')
-  # 
-  #  # Average value of metrics with name =~ 'Memory Used' across all servers in the group
-  #  Scout::Group.metrics.average(:name => 'Memory Used')
-  # 
-  #  # Maximum value ...
-  #  Scout::Group.metrics.maximum(:name => 'Memory Used')
-  # 
-  #  # Minimum value ... 
-  #  Scout::Group.metrics.minimum(:name => 'Memory Used')
+  # GROUP QUERIES ARE NO LONGER SUPPORTED IN THE SCOUT API.
   #
-  #  # Sum metrics, then take average
-  #  Scout::Group.metrics.average(:name => 'request_rate', :aggregate => true)
-  #
-  #  # Retrieve data starting @ 5 hours ago ending at 2 hours ago
-  #  Scout::Group.metrics.average(:name => 'request_rate', :start => Time.now.utc-5*3600, :end => Time.now.utc-2*3600)
-  #
-  #  # An array of time series values over the past hour
-  #  Scout::Group.metrics.average(:name => 'Memory Used').to_array
-  #
-  #  # A Url to a Google Sparkline Chart
-  #  Scout::Group.metrics.average(:name => 'Memory Used').to_sparkline
   attr_reader :metrics
 
   # 2nd parameter is ignored/a hack because of this open Hashie issue: https://github.com/intridea/hashie/issues/14

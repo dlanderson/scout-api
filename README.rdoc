@@ -19,7 +19,6 @@ Require the gem and authenticate to get your Scout on (the example uses https://
 You can query for the following high-level objects:
 
 * {Scout::Server}
-* {Scout::Group}
 * {Scout::Metric}
 
 Each of the classes have Rails-like finder methods. For example:
@@ -33,16 +32,9 @@ Each of the classes have Rails-like finder methods. For example:
   # first metric with ID=1
   Scout::Metric.first(1)
 
-  # all groups with name =~ 'Web'
-  Scout::Group.all(:name => 'Web')
-
-  # all servers in a group (or groups) with group name =~ 'Web'
-  Scout::Server.all(:group_name => "Web")
-
 == Metrics
 
-Access your metric data stored in Scout. You can retrieve data for a specific metric,
-a group of metrics, and aggregated metrics. For example:
+Access your metric data stored in Scout. You can retrieve data for a specific metric or aggregated metrics. For example:
 
   # average value of the metric with ID=1 over the past hour
   Scout::Metric.average(1)
@@ -51,13 +43,6 @@ a group of metrics, and aggregated metrics. For example:
   Scout::Server.first(:name => "DB Server").metrics.maximum(:name => 'inserts', 
   :start => Time.now.utc-(24*3600)*2,:end => Time.now.utc-(24*3600) )
 
-  # average memory used across all servers in the 'web servers' group
-  Scout::Group.first(:name => 'web servers').metrics.average(:name => 'Memory Used')
-  Scout::Group.first(:name => 'web servers').metrics.average(:name => 'Memory Used').to_sparkline
-  Scout::Group.first(:name => 'web servers').metrics.average(:name => 'Memory Used').to_a
-
-  # total throughput across web servers
-  Scout::Group.first(:name => 'web servers').metrics.average(:name => 'request_rate', :aggregate => true)
 
 == Server Management
 
@@ -75,7 +60,7 @@ scout_api has been tested against Ruby 1.8.7, and Ruby 1.9.2.
 
 == Note on Patches/Pull Requests
 
-* Fork the project[https://github.com/highgroove/scout-api].
+* Fork the project[https://github.com/scoutapp/scout-api].
 * Make your feature addition or bug fix.
 * Add tests for it. This is important so I don't break it in a
   future version unintentionally.
