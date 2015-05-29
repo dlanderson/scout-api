@@ -1,3 +1,6 @@
+== This Library is no longer supported
+Refer to https://scoutapp.com/info/developers for info on our current API
+
 = scout_api
 
 A library for interacting with Scout[http://scoutapp.com], a hosted server monitoring service. 
